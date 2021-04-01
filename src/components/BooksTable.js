@@ -4,7 +4,7 @@ import BookItem from './BookItem';
 
 const BooksTable = () => {
   return (
-    <div className="container">
+    <div>
       <BookItem />
     </div>
   );
