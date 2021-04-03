@@ -1,9 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Playfair+Display:wght@500&display=swap');
+
+body {
+  font-family: 'Playfair Display', serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+i,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 1px;
+}
+
 .container {
   position: absolute;
   left: 50%;
   transform: translate(-50%);
+
+  margin-top: 50px;
+}
+
+ul {
+  padding: 10px 20px;
+  margin: 0;
+  list-style-type: none;
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+
+.ui.segment {
+  font-size: 1.3rem;
 }
 
 .content-container {
   display: flex;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-container .button {
+  width: 80px;
+  margin-top: 10px;
+}
+
+.add-container {
+  margin-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.add-container .button {
+  width: 80px;
+  margin-top: 10px;
+}
+
+.item-container {
+  width: 850px;
+  margin-left: 50px;
+}
+
+.input-last {
+  margin-top: 5px;
+}
+
+button .icon {
+  padding: 11px 7px 28px 8.5px;
+  width: 35px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.basic:hover {
+  background-color: red;
+  color: rebeccapurple;
+}
+
+.btn {
+  margin-right: 5px;
+
+  border-radius: 8px;
+  background: none;
+}
+
+.btn-first {
+  border: 2px solid #b5cc18;
+  color: #b5cc18;
+
+  cursor: pointer;
+
+  transition: 0.5s;
+}
+
+.btn-second {
+  border: 2px solid #f2711c;
+  color: #f2711c;
+
+  cursor: pointer;
+
+  transition: 0.5s;
+}
+
+.btn-third {
+  border: 2px solid #db2828;
+  color: #db2828;
+
+  cursor: pointer;
+
+  transition: 0.5s;
+}
+
+.btn,
+.btn:active,
+.btn:focus {
+  outline: none;
+}
+
+.btn-first:hover {
+  background-color: #b5cc18;
+  color: white;
+}
+
+.btn-second:hover {
+  background-color: #f2711c;
+  color: white;
+}
+
+.btn-third:hover {
+  background-color: #db2828;
+  color: white;
+}
+
+i.icon {
+  margin: 0;
 }

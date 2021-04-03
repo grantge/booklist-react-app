@@ -4,7 +4,7 @@ import BookItem from './BookItem';
 
 const BooksTable = () => {
   return (
-    <div>
+    <div className="ui segment table-container">
       <BookItem />
     </div>
   );

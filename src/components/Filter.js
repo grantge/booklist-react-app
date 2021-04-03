@@ -2,10 +2,9 @@ import React from 'react';
 
 const Filter = () => {
   return (
-    <div>
-      <button>Ready to Start</button>
-      <button>In Process</button>
-      <button>Finish</button>
+    <div className="tiny ui buttons buttons-group">
+      <button className="olive ui button">In Process</button>
+      <button className="orange ui button">Finish</button>
     </div>
   );
 };

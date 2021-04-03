@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
+import AddBar from './components/AddBar';
 import Filter from './components/Filter';
 import BooksTable from './components/BooksTable';
 
@@ -14,12 +15,14 @@ function App() {
       <Header />
 
       <div className="content-container">
-        <div>
+        <div className="bar-container">
           <SearchBar />
-          <Filter />
+
+          <AddBar />
         </div>
 
-        <div>
+        <div className="item-container">
+          <Filter />
           <BooksTable />
         </div>
       </div>
