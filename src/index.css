@@ -54,6 +54,10 @@ ul {
   margin-top: 10px;
 }
 
+.book-container {
+  display: contents;
+}
+
 .add-container {
   margin-top: 20px;
 
@@ -148,4 +152,16 @@ button .icon {
 
 i.icon {
   margin: 0;
+}
+
+.normal {
+  color: black;
+}
+
+.process {
+  color: #b5cc18;
+}
+
+.finish {
+  color: #f2711c;
 }

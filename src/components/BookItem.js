@@ -1,41 +1,61 @@
 import React from 'react';
 
-const BookItem = () => {
-  const bookData = [
-    {
-      author: 'Jack London',
-      book: 'Martin Eden',
-      id: 1,
-    },
-    { author: 'James Joyce', book: 'Ulysses', id: 2 },
-    { author: 'Charles Dickens', book: 'Oliver Twist', id: 3 },
-  ];
+class BookItem extends React.Component {
+  state = {
+    finish: false,
+    process: false,
+  };
 
-  const book = bookData.map((item) => {
+  inProcessBook = () => {
+    this.setState((state) => {
+      return {
+        process: !state.process,
+      };
+    });
+  };
+
+  finishBook = () => {
+    this.setState((state) => {
+      return {
+        finish: !state.finish,
+      };
+    });
+  };
+
+  render() {
+    let defaultbook = 'black';
+
+    if (this.state.process) {
+      defaultbook = 'process';
+    }
+    if (this.state.finish) {
+      defaultbook = 'finish';
+    }
+
     return (
-      <li key={item.id} className="ui pink segment item">
-        <p>
-          {item.author} : {item.book}
-        </p>
-
+      <span className="book-container">
+        <span className={defaultbook}>
+          {this.props.author} : {this.props.book}
+        </span>
         <div className="images">
-          <button className="btn btn-first">
+          <button className="btn btn-first" onClick={this.inProcessBook}>
             <i className="bookmark icon"></i>
           </button>
 
-          <button className="btn btn-second">
+          <button className="btn btn-second" onClick={this.finishBook}>
             <i className="book icon"></i>
           </button>
 
-          <button className="btn btn-third">
+          <button
+            className="btn btn-third"
+            onClick={() => this.props.deleteFunc(this.props.id)}
+          >
             <i className="trash alternate outline icon"></i>
           </button>
         </div>
-      </li>
+      </span>
     );
-  });
-
-  return <ul>{book}</ul>;
-};
+  }
+}
 
 export default BookItem;
