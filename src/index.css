@@ -75,10 +75,6 @@ ul {
   margin-left: 50px;
 }
 
-.input-last {
-  margin-top: 5px;
-}
-
 button .icon {
   padding: 11px 7px 28px 8.5px;
   width: 35px;
@@ -164,4 +160,23 @@ i.icon {
 
 .finish {
   color: #f2711c;
+}
+
+.ui.small.search {
+  width: 210px;
+}
+
+.ui.small {
+  width: 125px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.ui.input.error {
+  display: contents;
+  margin-top: 5px;
+}
+
+.ui.input.error input {
+  margin-top: 5px;
 }

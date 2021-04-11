@@ -4,7 +4,6 @@ import BookItem from './BookItem';
 
 class BooksTable extends React.Component {
   render() {
-    console.log(this.props);
     const book = this.props.data.map((item) => {
       const value = item;
 
