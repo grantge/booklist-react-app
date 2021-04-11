@@ -9,25 +9,73 @@ import BooksTable from './components/BooksTable';
 
 import './index.css';
 
-function App() {
-  return (
-    <div className="container">
-      <Header />
+class App extends React.Component {
+  state = {
+    bookData: [
+      {
+        id: 1,
+        author: 'Jack London',
+        book: 'Martin Eden',
+      },
+      {
+        id: 2,
+        author: 'James Joyce',
+        book: 'Ulysses',
+      },
+      {
+        id: 3,
+        author: 'Charles Dickens',
+        book: 'Oliver Twist',
+      },
+    ],
+  };
 
-      <div className="content-container">
-        <div className="bar-container">
-          <SearchBar />
+  addBook = (author, book) => {
+    const newBook = {
+      id: this.state.bookData.length + 1,
+      author,
+      book,
+    };
 
-          <AddBar />
-        </div>
+    const newArr = [...this.state.bookData, newBook];
 
-        <div className="item-container">
-          <Filter />
-          <BooksTable />
+    this.setState({
+      bookData: newArr,
+    });
+  };
+
+  deleteBook = (id) => {
+    const newArrList = this.state.bookData.filter((book) => {
+      return book.id !== id;
+    });
+    this.setState({
+      bookData: newArrList,
+    });
+  };
+
+  render() {
+    return (
+      <div className="container">
+        <Header />
+
+        <div className="content-container">
+          <div className="bar-container">
+            <SearchBar />
+
+            <AddBar addFunc={this.addBook} />
+          </div>
+
+          <div className="item-container">
+            <Filter />
+            <BooksTable
+              deleteFunc={this.deleteBook}
+              data={this.state.bookData}
+            />
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
