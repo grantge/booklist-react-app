@@ -167,7 +167,7 @@ i.icon {
 }
 
 .ui.small {
-  width: 125px;
+  /* width: 125px; */
   margin-top: 5px;
   margin-bottom: 5px;
 }

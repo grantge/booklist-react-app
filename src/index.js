@@ -28,6 +28,7 @@ class App extends React.Component {
         book: 'Oliver Twist',
       },
     ],
+    filterAuthor: '',
   };
 
   addBook = (author, book) => {
@@ -53,24 +54,42 @@ class App extends React.Component {
     });
   };
 
+  search(array, fil) {
+    if (fil.length === 0) {
+      return array;
+    }
+    return array.filter((item) => {
+      return (
+        item.author.toLowerCase().indexOf(fil.toLowerCase()) > -1 ||
+        item.book.toLowerCase().indexOf(fil.toLowerCase()) > -1
+      );
+    });
+  }
+
+  searchAuthor = (filterAuthor) => {
+    this.setState({
+      filterAuthor: filterAuthor,
+    });
+  };
+
   render() {
+    const visible = this.search(this.state.bookData, this.state.filterAuthor);
+
+    console.log(visible);
     return (
       <div className="container">
         <Header />
 
         <div className="content-container">
           <div className="bar-container">
-            <SearchBar />
+            <SearchBar searchAuthor={this.searchAuthor} />
 
             <AddBar addFunc={this.addBook} />
           </div>
 
           <div className="item-container">
             <Filter />
-            <BooksTable
-              deleteFunc={this.deleteBook}
-              data={this.state.bookData}
-            />
+            <BooksTable deleteFunc={this.deleteBook} data={visible} />
           </div>
         </div>
       </div>

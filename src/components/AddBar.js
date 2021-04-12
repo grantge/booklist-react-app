@@ -36,18 +36,19 @@ class AddBar extends React.Component {
       });
 
       this.props.addFunc(this.state.author, this.state.book);
+      this.setState({ author: '' });
+      this.setState({ book: '' });
     }
   };
 
   render() {
-    console.log(this.state.isValid);
     let error = '';
     let errorStyle = 'ui small icon input';
 
     if (this.state.isValid) {
       errorStyle = 'ui input error';
       error = (
-        <div className="ui pointing red basic label">That name is short!</div>
+        <div className="ui pointing red basic label">The name is short!</div>
       );
     } else if (!this.state.isValid) {
       errorStyle = 'ui small icon input';
@@ -60,6 +61,7 @@ class AddBar extends React.Component {
             type="text"
             placeholder="Add Author..."
             onChange={this.addAuthor}
+            value={this.state.author}
           />
           {error}
         </div>
@@ -68,8 +70,8 @@ class AddBar extends React.Component {
           <input
             type="text"
             placeholder="Add Book..."
-            value={this.state.validateBook}
             onChange={this.addBook}
+            value={this.state.book}
           />
           {error}
         </div>
