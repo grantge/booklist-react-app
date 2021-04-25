@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import AddBar from './components/AddBar';
-import Filter from './components/Filter';
 import BooksTable from './components/BooksTable';
 
 import './index.css';
@@ -88,7 +87,6 @@ class App extends React.Component {
           </div>
 
           <div className="item-container">
-            <Filter />
             <BooksTable deleteFunc={this.deleteBook} data={visible} />
           </div>
         </div>
